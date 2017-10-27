@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(media/.*)$ - [L]
+RewriteRule ^(admin_media/.*)$ - [L]
+RewriteRule ^(dispatch\.wsgi/.*)$ - [L]
+RewriteRule ^(.*)$ {{cookiecutter.project_name}}/dispatch.wsgi/$1 [QSA,PT,L]

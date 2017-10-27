@@ -1,0 +1,6 @@
+{
+    "project_name": "mysite",
+    "helio_user": "patents",
+    "db_backend": ["postgres", "mysql", "sqlite3"],
+    "TIME_ZONE": "UTC"
+}
