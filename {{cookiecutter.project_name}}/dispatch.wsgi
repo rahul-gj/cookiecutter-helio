@@ -3,7 +3,7 @@ import os, sys
 # edit your username below
 sys.path.append("/home/{{cookiecutter.helio_user}}/public_html/{{cookiecutter.project_name}}");
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'settings'
+os.environ['DJANGO_SETTINGS_MODULE'] = '{{cookiecutter.project_name}}.settings'
 
 from django.core.wsgi import get_wsgi_application
 _application = get_wsgi_application()
