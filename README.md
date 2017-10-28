@@ -10,7 +10,7 @@ I want a templated Django setup that works on heliohost.
 ## Usage
 
 ```
-pip install cookiecutter
+$ pip install cookiecutter
 $ cookiecutter https://github.com/doismellburning/cookiecutter-django.git
 ```
 Answer some questions and project will be ready in working directory.
