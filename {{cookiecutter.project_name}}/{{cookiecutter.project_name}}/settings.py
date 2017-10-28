@@ -9,9 +9,9 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 
-Modified by cookiecutter:
+Modified by cookiecutter-helio:
 for full information, see
-
+https://github.com/rahul-gj/cookiecutter-helio
 """
 
 import os
@@ -81,18 +81,18 @@ DATABASES = {
     'default': {     
         {% if cookiecutter.db_backend == 'mysql' %}
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '{{cookiecutter.db_name}}',
-        'USER': '{{cookiecutter.db_usr}}',
-        'PASSWORD': '{{cookiecutter.db_pass}}',
-        'HOST': '{{cookiecutter.db_host}}',
-        'PORT': '{{cookiecutter.db_port}}',
+        'NAME': '{{cookiecutter.helio_user}}_',
+        'USER': '{{cookiecutter.helio_user}}_',
+        'PASSWORD': 'yourpass',
+        'HOST': 'localhost',
+        'PORT': '3306',
         {% elif cookiecutter.db_backend == 'postgres' %}
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '{{cookiecutter.db_name}}',                      
-        'USER': '{{cookiecutter.db_usr}}',
-        'PASSWORD': '{{cookiecutter.db_pass}}',
-        'HOST': '{{cookiecutter.db_host}}',
-        'PORT': '{{cookiecutter.db_port}}',
+        'NAME': '{{cookiecutter.helio_user}}_',
+        'USER': '{{cookiecutter.helio_user}}_',
+        'PASSWORD': 'yourpass',
+        'HOST': 'localhost',
+        'PORT': '5432',
         {% else %}
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
