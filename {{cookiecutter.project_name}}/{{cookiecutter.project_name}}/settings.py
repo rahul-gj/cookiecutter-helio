@@ -8,10 +8,6 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
-
-Modified by cookiecutter-helio:
-for full information, see
-https://github.com/rahul-gj/cookiecutter-helio
 """
 
 import os
@@ -29,7 +25,7 @@ SECRET_KEY = 'CHANGEME!!!'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["{{cookiecutter.helio_user}}.heliohost.org"]
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -78,25 +74,9 @@ WSGI_APPLICATION = '{{cookiecutter.project_name}}.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
-    'default': {     
-        {% if cookiecutter.db_backend == 'mysql' %}
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': '{{cookiecutter.helio_user}}_',
-        'USER': '{{cookiecutter.helio_user}}_',
-        'PASSWORD': 'yourpass',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        {% elif cookiecutter.db_backend == 'postgres' %}
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': '{{cookiecutter.helio_user}}_',
-        'USER': '{{cookiecutter.helio_user}}_',
-        'PASSWORD': 'yourpass',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        {% else %}
+    'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        {% endif %}
     }
 }
 
@@ -125,13 +105,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = "{{cookiecutter.TIME_ZONE}}"
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
