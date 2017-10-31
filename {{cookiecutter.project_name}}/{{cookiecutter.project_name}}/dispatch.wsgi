@@ -1,7 +1,7 @@
 import os, sys
 
 # edit your username below
-sys.path.append("/home/patents/public_html")
+sys.path.append("/home/{{cookiecutter.helio_user}}/public_html")
 
 from django.core.wsgi import get_wsgi_application
 
