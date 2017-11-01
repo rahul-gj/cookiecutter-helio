@@ -11,7 +11,7 @@ I want a templated Django setup that works on heliohost.
 
 ```
 $ pip install cookiecutter
-$ cookiecutter https://github.com/doismellburning/cookiecutter-django.git
+$ cookiecutter https://github.com/rahul-gj/cookiecutter-helio.git
 ```
 Answer some questions and project will be ready in working directory.
 
